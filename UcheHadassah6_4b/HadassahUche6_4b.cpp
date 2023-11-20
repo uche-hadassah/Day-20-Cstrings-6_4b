@@ -8,6 +8,9 @@ Write a main program to test both functions.*/#include<iostream>
 #include<cstring>
 using namespace std;
 const int MAX = 100;
+//Function prototypes
+char encrypt(char[]);
+char decrypt(char[]);
 int main()
 {
 	char word[MAX];
@@ -35,4 +38,14 @@ int main()
 		cout << word[j];//Outputs the encrypted word or sentence
 	}
 	cout << endl;
+}
+
+char encrypt(char[])
+{
+	return 0;
+}
+
+char decrypt(char[])
+{
+	return 0;
 }
