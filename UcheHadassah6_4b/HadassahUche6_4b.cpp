@@ -17,35 +17,47 @@ int main()
 	int i;
 	cout << "Enter the word you wish to encrypt:";
 	cin.getline(word, MAX);
-	for (i = 0; word[i] != '\0'; i++)//Loops through the sentence or word
-	{
-		if (word[i] == ' ')
-		{
-			word[i] = '*';
-		}
-		else
-		{
-			word[i]++;
-			if (word[i] > 'z')
-			{
-				word[i] = 'a';//Goes back to a if its > z
-			}
-		}
-	}
-	cout << "The word encrypted is:";
-	for (int j = 0; j < i; j++)
-	{
-		cout << word[j];//Outputs the encrypted word or sentence
-	}
+	
+	cout << "The word encrypted is:" << encrypt(word);
+	cout << endl;
+	cout << "The word decrypted is:" << decrypt(word);
 	cout << endl;
 }
 
-char encrypt(char[])
+char encrypt(char str[])
 {
-	return 0;
+	int i;
+	for (i = 0; str[i] != '\0'; i++)//Loops through the sentence or word
+	{
+		if (str[i] == ' ')
+		{
+			str[i] = '*';
+		}
+		else
+		{
+			str[i]++;
+			if (str[i] > 'z')
+			{
+				str[i] = 'a';//Goes back to a if its > z
+			}
+		}
+	}
+	return str[i];
 }
 
-char decrypt(char[])
+char decrypt(char str[])
 {
-	return 0;
+	int j;
+	for (j = 0; str[j] != '\0'; j++)//Loops through the sentence or word
+	{
+		if (str[j] == '*')
+		{
+			str[j] = ' ';
+		}
+		else
+		{
+			str[j]--;
+		}
+	}
+	return str[j];
 }
