@@ -1,10 +1,5 @@
-/*b) Re-write the above exercise with functions: Write a function called encrypt which 
-takes as a parameter a string and changes it to the encrypted version (as described 
-above). Write also a function called decrypt which takes as a parameter a string an 
-decrypts the string i.e. restores it to the original. For example decrypting the string s1
-containing “dbu” will convert it back to the string “cat”. (i.e. replace ‘d’ with ‘c’, ‘b’
-with ‘a’ and so on, thus reversing the coding scheme used for encryption above). 
-Write a main program to test both functions.*/#include<iostream>
+/*Name:Uche Hadassah
+This program encrypts and decrypts a string using functions*/#include<iostream>
 #include<cstring>
 using namespace std;
 const int MAX = 100;
@@ -15,17 +10,16 @@ int main()
 {
 	char word[MAX];
 	int i;
-	cout << "Enter the word you wish to encrypt:";
+	cout << "\nEnter the word you wish to encrypt:";
 	cin.getline(word, MAX);
 	
 	encrypt(word);
-	cout << "The word encrypted is:" << word;
-	cout << endl;
+	cout << "\nThe word encrypted is:" << word;
 	decrypt(word);
-	cout << "The word decrypted is:" << word;
-	cout << endl;
+	cout << "\nThe word decrypted is:" << word;
 }
 
+//Encrypts the word or sentence
 void encrypt(char str[])
 {
 	int i;
@@ -46,6 +40,7 @@ void encrypt(char str[])
 	}
 }
 
+//Does the reverse of the encrypt function
 void decrypt(char str[])
 {
 	int j;
