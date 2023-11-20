@@ -9,8 +9,8 @@ Write a main program to test both functions.*/#include<iostream>
 using namespace std;
 const int MAX = 100;
 //Function prototypes
-char encrypt(char[]);
-char decrypt(char[]);
+void encrypt(char[]);
+void decrypt(char[]);
 int main()
 {
 	char word[MAX];
@@ -18,13 +18,15 @@ int main()
 	cout << "Enter the word you wish to encrypt:";
 	cin.getline(word, MAX);
 	
-	cout << "The word encrypted is:" << encrypt(word);
+	encrypt(word);
+	cout << "The word encrypted is:" << word;
 	cout << endl;
-	cout << "The word decrypted is:" << decrypt(word);
+	decrypt(word);
+	cout << "The word decrypted is:" << word;
 	cout << endl;
 }
 
-char encrypt(char str[])
+void encrypt(char str[])
 {
 	int i;
 	for (i = 0; str[i] != '\0'; i++)//Loops through the sentence or word
@@ -42,10 +44,9 @@ char encrypt(char str[])
 			}
 		}
 	}
-	return str[i];
 }
 
-char decrypt(char str[])
+void decrypt(char str[])
 {
 	int j;
 	for (j = 0; str[j] != '\0'; j++)//Loops through the sentence or word
@@ -59,5 +60,4 @@ char decrypt(char str[])
 			str[j]--;
 		}
 	}
-	return str[j];
 }
